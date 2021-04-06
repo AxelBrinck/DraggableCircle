@@ -5,6 +5,9 @@
 
 
 
+
+
+
 // global variables and configuration. ****************************************
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
@@ -18,6 +21,9 @@ const circle = {
 
 
 
+
+
+
 // the only math needed for this. *********************************************
 function distanceBetweenTwoPoints(ax, ay, bx, by) {
     return Math.sqrt(Math.pow(bx - ax, 2) + Math.pow(by - ay, 2));
@@ -27,6 +33,9 @@ function isPointInsideCircle(ax, ay, bx, by, r) {
     return distanceBetweenTwoPoints(ax, ay, bx, by) <= r;
 }
 // ****************************************************************************
+
+
+
 
 
 
@@ -55,18 +64,29 @@ document.onmousemove = function (e) {
 
 
 
+
+
+
 // canvas draw ****************************************************************
 function refresh() {
+
+    // draw background.
     ctx.fillStyle = "white";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-
+    
+    // draw circle.
     ctx.beginPath();
     ctx.arc(circle.x, circle.y, circle.r, 0, 2 * Math.PI);
     ctx.stroke();
 
 }
+
+// initially drawing the canvas.
 requestAnimationFrame(refresh);
 // ****************************************************************************
+
+
+
 
 
 
